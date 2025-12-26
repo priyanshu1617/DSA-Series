@@ -1,0 +1,33 @@
+public class selection {
+    public static void main(String[] args) {
+        int arr[] = {1, 5, 2, 3, 6, 7, 4};
+        selectionsort(arr);
+        for (int nums : arr) {
+            System.out.print(nums + " ");
+        }
+    }
+    static void selectionsort(int []arr){
+        for (int i = 0; i < arr.length; i++) {
+            int last= arr.length-i-1;
+            int max=getmax(arr,0,last);
+            swap(arr,max,last);
+
+        }
+    }
+    public static int getmax(int[]arr,int s,int e){
+        int max=s;
+        for (int i = s; i <= e; i++) {
+            if (arr[i]>arr[max]){
+                max=i;
+            }
+        }
+        return max;
+
+    }
+    static void swap(int[]arr,int max,int last ){
+        int temp = arr[max];
+        arr[max] = arr[last];
+        arr[last] = temp;
+
+    }
+}
