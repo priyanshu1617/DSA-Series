@@ -1,0 +1,12 @@
+class Solution {
+
+    void printGfg(int N) {
+       if (N > 0) {
+            System.out.print("GFG");
+            if (N > 1) {
+                System.out.print(" ");
+                printGfg(N - 1);
+            }
+        }
+    }
+}
